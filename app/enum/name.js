@@ -1,0 +1,23 @@
+const GenderEnum = {
+  MALE: 'male',
+  FEMALE: 'female',
+};
+
+const UsernameLanguageEnum = {
+  CHINESE: 'chinese',
+  ENGLISH: 'english',
+};
+
+const UsernameTagTypeEnum = {
+  NUMBER: 'number',
+  TIMESTAMP: 'timestamp',
+};
+
+const UsernameRandomTagDefaultLength = 4;
+
+module.exports = {
+  GenderEnum,
+  UsernameLanguageEnum,
+  UsernameTagTypeEnum,
+  UsernameRandomTagDefaultLength,
+};
