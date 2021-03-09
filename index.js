@@ -22,8 +22,7 @@ class Index {
   }
 
   getFullname(spacing) {
-    this.spacing = spacing || this.spacing;
-    return `${this.firstname}${this.spacing}${this.lastname}`;
+    return this.nameService.getFullname(spacing);
   }
 
   async getUsernameWithTag(type, ...params) {
