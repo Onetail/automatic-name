@@ -6,6 +6,10 @@ class Index {
     this.nameService.createNewName();
   }
 
+  async createNewName(...languages) {
+    return await this.nameService.createNewName(...languages);
+  }
+
   getSpacing() {
     return this.nameService.getSpacing();
   }
@@ -17,7 +21,7 @@ class Index {
     return this.nameService.getUsername();
   }
 
-  getFullName(spacing) {
+  getFullname(spacing) {
     this.spacing = spacing || this.spacing;
     return `${this.firstname}${this.spacing}${this.lastname}`;
   }

@@ -2101,7 +2101,7 @@ class NameService {
     return this.firstname + this.lastname;
   }
 
-  getFullName(spacing) {
+  getFullname(spacing) {
     this.spacing = spacing || this.spacing;
     return `${this.firstname}${this.spacing}${this.lastname}`;
   }
@@ -2149,7 +2149,7 @@ class NameService {
     await this.createNewName(UsernameLanguageEnum.ENGLISH);
     await this.createNewName(UsernameLanguageEnum.ENGLISH, UsernameLanguageEnum.TAIWAN);
     const username = await this.getUsername();
-    const fullname = await this.getFullName();
+    const fullname = await this.getFullname();
 
     await this.getUsernameWithTag(UsernameTagTypeEnum.NUMBER);
     await this.getUsernameWithTag(UsernameTagTypeEnum.NUMBER, 7);
