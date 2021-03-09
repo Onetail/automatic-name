@@ -1,5 +1,5 @@
 {
-  "name": "user-name",
+  "name": "automatic-name",
   "version": "1.0.0",
   "description": "automatic username for chinese and english ",
   "main": "index.js",
@@ -8,6 +8,9 @@
     "start": "node index.js"
   },
   "keywords": [
+    "automatic-name",
+    "auto-name",
+    "user-name",
     "username",
     "nickname",
     "randomname"
