@@ -4,6 +4,7 @@ const GenderEnum = {
 };
 
 const UsernameLanguageEnum = {
+  TAIWAN: 'taiwan',
   CHINESE: 'chinese',
   ENGLISH: 'english',
 };
