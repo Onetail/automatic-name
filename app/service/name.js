@@ -2133,7 +2133,6 @@ class NameService {
       default:
         this.tagNumber = await uuid[type](...params);
     }
-    console.log(this.firstname + this.lastname + this.tag + this.tagNumber);
     return this.firstname + this.lastname + this.tag + this.tagNumber;
   }
 
@@ -2151,7 +2150,6 @@ class NameService {
       default:
         this.tagNumber = await uuid[type](...params);
     }
-    console.log(`${this.firstname}${this.spacing}${this.lastname}${this.spacing}${this.tag}${this.tagNumber}`);
     return `${this.firstname}${this.spacing}${this.lastname}${this.spacing}${this.tag}${this.tagNumber}`;
   }
 
