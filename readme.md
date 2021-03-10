@@ -20,6 +20,12 @@ language arguments
 #### Set firstname and lastname middle spacing 
 ``` setSpacing(string) ``` 
 
+#### Get tag string 
+``` getTag() ```
+  
+#### Set tag string 
+``` setTag(string) ``` 
+
 
 #### Get username
 ``` getUsername() ```

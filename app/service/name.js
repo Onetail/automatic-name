@@ -11,7 +11,8 @@ class NameService {
     this.firstname = null;
     this.lastname = null;
     this.gender = null;
-    this.tag = null;
+    this.tag = '#';
+    this.tagNumber = null;
     this.spacing = ' ';
 
     this.taiwan = {
@@ -2087,6 +2088,8 @@ class NameService {
     this.lastname = this[language].lastname[this.gender][
       Math.floor(Math.random() * this[language].lastname[this.gender].length)
     ];
+
+    return this;
   }
 
   getSpacing() {
@@ -2095,6 +2098,7 @@ class NameService {
 
   setSpacing(spacing) {
     this.spacing = spacing;
+    return this;
   }
 
   getUsername() {
@@ -2106,40 +2110,49 @@ class NameService {
     return `${this.firstname}${this.spacing}${this.lastname}`;
   }
 
+  getTag() {
+    return this.tag;
+  }
+
+  setTag(tag) {
+    this.tag = tag;
+    return this;
+  }
+
   async getUsernameWithTag(type, ...params) {
-    this.tag = '#';
     switch (type) {
       case UsernameTagTypeEnum.NUMBER:
         const randomLength = params[0] || UsernameRandomTagDefaultLength;
-        this.tag += Math.floor(Math.random() * Math.pow(10, randomLength))
+        this.tagNumber = Math.floor(Math.random() * Math.pow(10, randomLength))
           .toString()
           .padStart(randomLength, 0);
         break;
       case UsernameTagTypeEnum.TIMESTAMP:
-        this.tag += Date.now();
+        this.tagNumber = Date.now();
         break;
       default:
-        this.tag += await uuid[type](...params);
+        this.tagNumber = await uuid[type](...params);
     }
-    return this.firstname + this.lastname + this.tag;
+    console.log(this.firstname + this.lastname + this.tag + this.tagNumber);
+    return this.firstname + this.lastname + this.tag + this.tagNumber;
   }
 
   async getFullnameWithTag(type, ...params) {
-    this.tag = '#';
     switch (type) {
       case UsernameTagTypeEnum.NUMBER:
         const randomLength = params[0] || UsernameRandomTagDefaultLength;
-        this.tag += Math.floor(Math.random() * Math.pow(10, randomLength))
+        this.tagNumber = Math.floor(Math.random() * Math.pow(10, randomLength))
           .toString()
           .padStart(randomLength, 0);
         break;
       case UsernameTagTypeEnum.TIMESTAMP:
-        this.tag += Date.now();
+        this.tagNumber = Date.now();
         break;
       default:
-        this.tag += await uuid[type](...params);
+        this.tagNumber = await uuid[type](...params);
     }
-    return `${this.firstname}${this.spacing}${this.lastname}${this.spacing}${this.tag}`;
+    console.log(`${this.firstname}${this.spacing}${this.lastname}${this.spacing}${this.tag}${this.tagNumber}`);
+    return `${this.firstname}${this.spacing}${this.lastname}${this.spacing}${this.tag}${this.tagNumber}`;
   }
 
   async run() {
@@ -2157,7 +2170,7 @@ class NameService {
     await this.getUsernameWithTag('v4');
     await this.getUsernameWithTag('v5', username + fullname, '1b671a64-40d5-491e-99b0-da01ff1f3341');
 
-    await this.setSpacing('_');
+    this.setSpacing('_');
     await this.getFullnameWithTag(UsernameTagTypeEnum.NUMBER);
     await this.getFullnameWithTag(UsernameTagTypeEnum.NUMBER, 7);
     await this.getFullnameWithTag(UsernameTagTypeEnum.TIMESTAMP);
@@ -2165,6 +2178,11 @@ class NameService {
     await this.getFullnameWithTag('v3', username + fullname, '1b671a64-40d5-491e-99b0-da01ff1f3341');
     await this.getFullnameWithTag('v4');
     await this.getFullnameWithTag('v5', username + fullname, '1b671a64-40d5-491e-99b0-da01ff1f3341');
+
+    this.setTag('');
+    this.getTag();
+    await this.getUsernameWithTag(UsernameTagTypeEnum.NUMBER);
+    await this.getFullnameWithTag(UsernameTagTypeEnum.NUMBER);
   }
 }
 

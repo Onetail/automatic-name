@@ -14,7 +14,15 @@ class Index {
     return this.nameService.getSpacing();
   }
   setSpacing(spacing) {
-    this.nameService.setSpacing(spacing);
+    return this.nameService.setSpacing(spacing);
+  }
+
+  getTag() {
+    return this.nameService.getTag();
+  }
+
+  setTag(tag) {
+    return this.nameService.setTag(tag);
   }
 
   getUsername() {
