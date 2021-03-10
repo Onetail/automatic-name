@@ -3,7 +3,9 @@
 ## How to install
 
 ``` yarn add automatic-name ```
+
 or 
+
 ``` npm install automatic-name ``` 
 
 ## Feature
@@ -62,3 +64,28 @@ params arguments
 
 
 ![](https://i.imgur.com/V2fpjR3.png)
+
+
+## Example
+
+
+```
+const AutomaticName = require('automatic-name');
+
+const name = new AutomaticName();
+
+(async () => {
+  name.getUsername();
+  // RobertsHolly
+
+  name.getFullname();
+  // Roberts Holly
+
+  await name.getUsernameWithTag('v1');
+  // RobertsHolly#c39404b1-8170-11eb-9eea-774c26920ecf
+
+  name.createNewName();
+  // random a new name
+})();
+
+```
