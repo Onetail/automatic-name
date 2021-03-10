@@ -1,4 +1,10 @@
-# user-name
+# automatic-name
+
+## How to install
+
+``` yarn add automatic-name ```
+or 
+``` npm install automatic-name ``` 
 
 ## Feature
 #### Create new name 
