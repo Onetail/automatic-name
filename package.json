@@ -1,6 +1,6 @@
 {
   "name": "automatic-name",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "automatic username for chinese and english ",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,10 @@
   "license": "ISC",
   "dependencies": {
     "uuid": "^8.3.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Onetail/automatic-name"
+  },
+  "homepage": "https://github.com/Onetail/automatic-name"
 }
