@@ -1,6 +1,6 @@
 {
   "name": "automatic-name",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "automatic username for chinese and english ",
   "main": "index.js",
   "scripts": {
