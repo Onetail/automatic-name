@@ -1,9 +1,7 @@
 import NameService from "./app/service/name";
 
-
 declare class AutomaticName {
-  nameService: NameService
-  constructor(data?: EscposArguments);
+    private nameService: NameService;
     createNewName(...languages): Promise<NameService>;
     getSpacing(): string;
     setSpacing(spacing): NameService;
@@ -15,5 +13,4 @@ declare class AutomaticName {
     getFullnameWithTag(type, ...params): Promise<string>;
 }
 
-export = AutomaticName;
 export as namespace AutomaticName;
