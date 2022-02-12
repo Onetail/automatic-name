@@ -1,7 +1,7 @@
 import NameService from "./app/service/name";
 
 
-export declare class Index {
+declare class AutomaticName {
   nameService: NameService
   constructor(data?: EscposArguments);
     createNewName(...languages): Promise<NameService>;
@@ -14,3 +14,6 @@ export declare class Index {
     getUsernameWithTag(type, ...params): Promise<string>;
     getFullnameWithTag(type, ...params): Promise<string>;
 }
+
+export = AutomaticName;
+export as namespace AutomaticName;
